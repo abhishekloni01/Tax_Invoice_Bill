@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+   {% block content %}
+    <div class="container my-3">
+
+        <div class="row border border-2 border-primary rounded-3" >
+            
+            
+            <h6>Prop : Ashok S Loni</h6>
+            <i class="fa fa-bolt" style="font-size:30px;color:red;"></i>
+            <div class="text-center">
+                <h3>M/s. LONI ELECTRICALS</h3>
+                <b>
+                    <p>Contractor and Supplier of all electrical line materials</p>
+                    <p>Asundikar Building Opp. Tilak Kanya School, Godbole Mala, VIJAYAPUR - 586101</p>
+                    <p>Mob : 9448129482  E-mail ID: ashokloni@yahoo.com</p>
+                </b>
+                
+            </div>
+        </div>
+
+        {% comment %} <!-- -------------------------- --> {% endcomment %}
+
+        <div style="height: 30px; margin-top: 2px;" class="row border border-2 border-primary rounded-3 text-center ">
+            <b>
+                <p>Govt. Licenced Class- I Electrical Contractor</p>
+            </b>
+            
+        </div>
+
+        {% comment %} <!-- ------------------------- --> {% endcomment %}
+
+        <div class="row text-center my-1">
+            <div  class="col border border-2 border-primary rounded-3">
+            
+                <b>
+                    <p style="margin-top: 10px">To: <u><span style="font-size:22px">{{to}}</span></u></p>
+                    <p>Byer's GST: <u><span style="font-size:22px">{{ByerGSTN}}</span></u></p>
+                </b>
+
+                
+                
+            </div>
+            <div class="col">
+                <table class="table table-bordered border-primary border-2 rounded-2">
+                    <thead>
+                        <tr>
+                            <th colspan="2">CASH/CREDIT</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>INVOICE NO.</b></td>
+                            <td><b>{{invoice_no}}</b></td>
+                            
+                        </tr>
+                        <tr>
+                            <td><b>DATE:</b></td>
+                            <td><b>{{date}}</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- <div class="row"><span class="text-center"><h5>CASH/CREDIT</h5></span></div>
+                <div class="row"></div>
+                <div class="row"></div> -->
+            </div>
+        </div>
+
+        {% comment %} <!-- ------------------------------- --> {% endcomment %}
+
+        <div  class="fixTableHead row border border-2 border-primary rounded-3 text-center my-1 ">
+            
+            <table border="2px">
+                <thead>
+                    <tr class="tb">
+                        <th width="5%">S.No</th>
+                        <th>Particulars</th>
+                        <th>Quantity</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for prod in prods %}
+                    <tr>
+                        <td class="counterCell"></td>
+                        <td ><b>{{prod.particulars}}</b></td>
+                        <td><b>{{prod.qty}}</b></td>
+                        <td><b>{{prod.rate}}</b></td>
+                        <td><b>{{prod.amount}}</b></td>
+                    </tr>
+                    {% endfor %}
+                    
+                   
+                    
+                
+                </tbody>
+            </table>
+        </div>
+
+        {% comment %} <!-- ----------------------------- --> {% endcomment %}
+
+        <div class="row border border-2 border-primary rounded-3 text-center my-1">
+            <div class="col-7 border border-2 border-primary rounded-3">
+                <p class="my-5"><b>Rupees in words: </b><input type="text"></p>
+            </div>
+            <!-- <div class="col-2 border border-2 border-primary rounded-3">
+                <div class="row">Total</div>
+                <div class="row">SGST</div>
+                <div class="row">CGST</div>
+                <div class="row">GTOTAL</div>
+            </div> -->
+            <div class="col-5 border border-3 border-primary rounded-3">
+                <table width="100%"> 
+                    <tbody>
+                        <tr>
+                            <th>TOTAL</th>
+                            <td><b>{{total}}</b></td>
+                        </tr>
+                        <tr>
+                            <th>SGST _9_%</th>
+                            <td><b>{{sgst}}</b></td> 
+                        </tr>
+                        <tr>
+                            <th>CGST _9_%</th>
+                            <td><b>{{cgst}}</b></td>
+                        </tr>
+                        <tr>
+                            <th>GTOTAL</th>
+                            <td><b>{{Gtotal}}</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        {% comment %} <!-- ----------------------------- --> {% endcomment %}
+
+        <div class="row border border-2 border-primary rounded-3 text-center my-1">
+          
+               <div class="col-9">
+                   <p style="margin-top: 10px">
+                       <b>Costumer Signature</b>
+                   </p>
+               </div>
+               <div class="col-3">
+                   <p style="margin-top: 40px"><b>For.M/s.Loni Electricals</b></p>
+               </div>
+         
+        </div>
+    </div>
+{% endblock content %}

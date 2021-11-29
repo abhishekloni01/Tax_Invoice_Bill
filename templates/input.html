@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  
+
+    <!-- input form -->
+    <div class="form" style="margin-top: 30px; width: 50%;" >
+      <form action="{% url 'to_gst' %}" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">To:</label>
+            <input type="text" name="to" class="form-control" id="exampleFormControlInput1" placeholder="To">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Byer's GST</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="gst" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Invoice_No:</label>
+            <input type="text" name="invoice_no" class="form-control" id="exampleFormControlInput3" placeholder="Invoice_No">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput4" class="form-label">Date:</label>
+            <input type="date" name="date" class="form-control" id="exampleFormControlInput4" placeholder="Date">
+          </div>    
+    
+
+    
+      <div class="col-md-8">
+                        <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fa fa-database"
+                                aria-hidden="true"></i>
+                            Submit</button>
+                    </div>
+
+         
+      </form>
+      <a style="margin-top: 10px;" href="{% url 'prod_insert' %}" class="btn btn-outline-success">
+                          <i class="fas fa-plus"></i>Add Products
+                      </a>
+  </div>
+
+  
+  {% endblock content %}

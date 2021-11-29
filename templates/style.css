@@ -1,0 +1,37 @@
+/* table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+  } */
+
+  /* .fixTableHead {
+    overflow-y: auto;
+    height: 110px;
+  }
+  .fixTableHead thead th {
+    position: sticky;
+    top: 0;
+  } */
+  /* .tb {
+    border-collapse: collapse;        
+    width: 100%;
+  }
+  .tb > th,
+  .tb > td {
+    padding: 8px 15px;
+    border: 2px solid #e2894e;
+  }
+  .tb > th {
+    background: #e6945d;
+  } */
+
+
+  table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
+}
+
+
